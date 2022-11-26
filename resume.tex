@@ -1,0 +1,548 @@
+%-------------------------
+% Entry-level Resume in LaTeX
+% Version - v1.3
+% Last Edits - October 5, 2021
+% Author : Jayesh Sanwal
+% Reach out to me on LinkedIn(/in/jsanwal), with any suggestions, ideas, issues, etc.
+%------------------------
+
+%%-------------------------------------
+% Notes to the User here -
+% 1) Change " Author+an = {N=highlight}" in "Publications.bib", where N is the number at which your name appears
+% 2) Use "\vspace" wisely, that would change spacing, and is currently being used as a hacky fix
+% 3) Do not delete the fonts in the left side
+% 4) Use the "Rich Text" feature on Overleaf - On the top panel next to source. Makes it much easier for starters on LaTeX to use this template
+% 5) Do NOT use periods at the end of bullet points, the sample (ipsum) text might have it
+% 6) Use "maxbibnames" on this file to change the maximum number of authors on the paper (Credits: Dr. Natasha Krell) - Default is 3, but change line 92 to add authors
+
+%%-------------------------------------
+% Changes from last version (v1.3, October 5, 2021) -
+% 1) Summary statement removed, replaced with 4 keywords on top and Impact statement
+
+% Changes from last version (v1.2, August 23, 2021) -
+% 1) Changes in the Technical Skills section - renamed to just Skills
+% 2) Changed the font size for the name
+% 3) Education to the top
+%%-------------------------------------
+
+
+%%-------------------------------------
+% Changes to be made in the next version -
+% 1) Shift to Class file, make changes here
+% 2) Use a fonts folder
+% 3) Incorporate Leadership & volunteering together
+% 4) Remove \vspace based 'hacky' fixes
+%%-------------------------------------
+
+
+\documentclass[a4,10pt]{article}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  STARTING HERE, DO NOT TOUCH ANYTHING 
+%%%%%%% --------------------------------------------------------------------------------------
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+ \usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{hyperref}
+\usepackage{csquotes}
+\usepackage{tabularx}
+\usepackage[dvipsnames]{xcolor}
+\hypersetup{colorlinks=true,urlcolor=blue}
+\usepackage[11pt]{moresize}
+\usepackage{setspace}
+\usepackage{fontspec}
+\usepackage[inline]{enumitem}
+\usepackage{array}
+\newcolumntype{P}[1]{>{\centering\arraybackslash}p{#1}}
+\usepackage{anyfontsize}
+\usepackage{fontawesome}
+\usepackage[colorinlistoftodos]{todonotes}
+% \usepackage[colorlinks=true,linkcolor=blue]{hyperref}
+
+%%%% Set Margins
+\usepackage[margin=1.2cm, top=1cm]{geometry}
+
+%%%% Set Fonts
+% \setmainfont[
+% BoldFont=SourceSansPro-Semibold.otf, %SourceSansPro-Bold.otf
+% ItalicFont=SourceSansPro-RegularIt.otf
+% ]{SourceSansPro-Regular.otf}
+% \setsansfont{SourceSansPro-Semibold.otf}
+
+%%%% Set Page
+\pagestyle{fancy}
+\fancyhf{} 
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+%%%% Set URL Style
+\urlstyle{same}
+
+%%%% Set Indentation
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+%%%% Set Secondary Color
+\definecolor{UI_blue}{RGB}{61, 90, 128}
+
+%%%% Define New Commands
+\usepackage[style=nature, maxbibnames=3]{biblatex}
+\addbibresource{Publications.bib}
+
+%%%% Bold Name in Publications
+\renewcommand*{\mkbibnamegiven}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+\renewcommand*{\mkbibnamefamily}[1]{%
+\ifitemannotation{highlight}
+{\textbf{#1}}
+{#1}}
+
+%%%% Set Sections formatting
+\titleformat{\section}{
+\color{UI_blue} \scshape \raggedright \large 
+}{}{0em}{}[\vspace{-10pt} \hrulefill \vspace{-6pt}]
+
+%%%% Set Subtext Formatting
+\newcommand{\subtext}[1]{
+#1\par\vspace{-0.2cm}}
+
+% \newcommand{\subtextit}[1]{\vspace{0.15cm}
+% \textit{ #1 \vspace{-0.2cm}} }
+
+%%%% Set Item Spacing
+\setlist[itemize]{align=parleft,left=0pt..1em}
+
+%%%% New Itemize "Zitemize" Formatting - tighter spacing than itemize
+\newenvironment{zitemize}{
+\begin{itemize}\itemsep0pt \parskip0pt \parsep1pt}
+{\end{itemize}\vspace{-0.4cm}}
+
+
+%%%% Define Skills Bold Formatting
+\newcommand{\hskills}[1]{
+\textbf{\bfseries #1} }
+
+%%%% Set Subsection formatting
+\titleformat{\subsection}{\vspace{-0.1cm} 
+\bfseries \fontsize{11pt}{2cm}}{}{0em}{}[\vspace{-0.2cm}]
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  END OF "DO NOT TOUCH" REGION
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%% --------------------------------------------------------------------------------------
+\begin{document}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  HEADER
+%%%%%%% --------------------------------------------------------------------------------------
+
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+\vspace{-.90cm}
+\begin{center}
+\name{\huge ASHISH DHIMAN} \\% Your name
+% You can merge both of these into a single line, if you do not have a website.
+\vspace{.07cm}
+\address{\faPhone \hspace{0.2mm} +1(404) 509-0254 | Atlanta, GA} \\
+\address{\faSend \hspace{0.2mm} \href{mailto:ashish1610dhiman@gmail.com}{ashish1610dhiman@gmail.com} | \faLinkedinSquare \hspace{0.2mm} \href{https://linkedin.com/in/ashish1610dhiman}{linkedin.com/in/ashish1610dhiman} | \faGithub \hspace{0.2mm} \href{https://ashish1610dhiman.github.io/ad_cv/}{ashish1610dhiman.github.io/ad\_cv/}}  %
+\end{center}
+
+
+% \vspace{-2.90cm}
+% \begin{center}
+%     \begin{minipage}[b]{0.5\textwidth}
+%             {\Huge Ashish Dhiman} \\ %
+%             \href{https://ashish1610dhiman.github.io/ad_cv/}{ashish1610dhiman.github.io/ad\_cv/}
+%             % \vspace{0.5cm}
+%             % {{Email: ashish.dhiman@gatech.edu \qquad Phone:+91-9805-441123 \qquad \href{https://www.linkedin.com/in/ashish1610dhiman/}{linkedin.com/in/ashish1610dhiman/}}} \\
+%     \end{minipage}% 
+%     \begin{minipage}[b]{0.5\textwidth}
+%             \flushright
+%             %{\Huge Ashish Dhiman} \\ %
+%             \vspace{0.05cm}
+%             {{Mobile Phone :+91-9805-441123 \qquad
+%             \href{mailto:ashish1610dhiman@gmail.com}{ashish.dhiman@gatech.edu}\qquad
+%             \href{https://www.linkedin.com/in/ashish1610dhiman/}{linkedin.com/in/ashish1610dhiman/}
+%             }} \\
+%     \end{minipage}%
+%     % \begin{minipage}[b]{0.24\textwidth}
+%     %         \flushright \large  %Willing to Relocate
+%     %         {\href{https://www.linkedin.com/in/link/}{linkedin.com/in/yourlink} } \\
+%     % \end{minipage}   
+    
+% \vspace{-0.15cm} 
+% % {\color{UI_blue} \hrulefill}
+% \end{center}
+\vspace{-0.40cm}
+% \begin{minipage}[b]{0.25\textwidth} \textbullet \hspace{0.1cm} Keyword 1 \end{minipage}\begin{minipage}[b]{0.25\textwidth} \textbullet \hspace{0.1cm} Keyword 2  \end{minipage}\begin{minipage}[b]{0.25\textwidth} \textbullet \hspace{0.1cm} Keyword 3 \end{minipage}\begin{minipage}[b]{0.25\textwidth}  \textbullet \hspace{0.1cm} Keyword 4 \end{minipage}
+
+% \hskills{Impact:} A funded research proposals, B technical reports,  \& C scientific publications with X+ downloads \& Y+ citations, Z awards  %% This can be customized, but I feel this impact statement makes people want to read more.
+% \vspace{-0.2cm}
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  OBJECTIVE
+%%%%%%% --------------------------------------------------------------------------------------
+% \section{Objective}
+% \vspace{-0.15cm}
+% %\todo[inline]{Section to Update}
+% % \begin{zitemize}
+% %         \item To expand my knowledge base and gain expertise in Optimisation Methods and Explainable Machine Learning
+% %         \item and be at the forefront of research in the said domains.
+% %         \item The expanded knowledge base shall help me land prominent positions in academia as well as industry.
+% %         \item Formulated an approach to analyse the convergence of MCMC chains in the grammar space, by defining the expressions as tree kernels, and which allowed the calculation of $\hat{R}$ convergence statistic measure.
+% % \end{zitemize}
+% I aspire to drive disruptive innovations with \textbf{Explainable AI} systems that are powerful, transparent, and robust.
+% I aspire to develop my skill-set and networking connections that will act as a stepping stone in my career and help open new pathways for me, like Applied Research roles in coveted firms or postgraduate education. These skills will also help me contribute to the availability of digital mental health services.
+%\vspace{-0.15cm} g yo art
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  EDUCATION
+%%%%%%% --------------------------------------------------------------------------------------
+\vspace{-0.2cm}
+\section{Education}
+\vspace{-0.18cm} 
+\item \begin{minipage}{\linewidth} \textbf{Georgia Institute of Technology, Atlanta, USA} \hfill\\
+% \item \begin{minipage}{\linewidth} \textbf{Georgia Institute of Technology, Atlanta, USA} \hfill \textbf{GPA: x.x/4.0} \\
+\textit{Master of Science in Analytics: Computational Data Analysis \& Analytical Tools Track}
+\hfill {\textit{Aug 2022 --- Jan 2024}}
+\item
+\textit{\textbf{Relevant Coursework:}} Analytical Modeling, Machine Learning, Regression, Deterministic Optimization, Big Data Analytics, Bayesian Statistics, Data \& Visual Analytics, Graph Algorithms, Large Scale Data Analysis, Foundations of Ethical ML
+\end{minipage}
+\vspace{0.16cm} 
+\item \begin{minipage}{\linewidth} \textbf{Indian Institute of Technology, Kharagpur, INDIA} \hfill \textbf{GPA: 8.32/10.0 | Class Rank 2} \\
+\textit{B.Tech(Honours) in Aerospace Engineering, with Specialisation in Optimization Theory}
+\hfill {\textit{Jul 2015 --- May 2019}}
+% \item
+% \textit{\textbf{Relevant Coursework:}} Programming \& Data Structures, Probability \& Statistics, Linear Algebra, Operations Research, Optimization Methods in Finance, Nonlinear Programming, Numerical Solution of Differential Eqns., Managerial Economics
+\end{minipage}
+%\vspace{-0.35cm} 
+% \vspace{0.1cm}
+
+% \item \begin{minipage}{\linewidth} \textbf{Army Public School, Nahan} \hfill \textbf{Marks: 95.2\%} \\
+% \textit{Higher Secondary Certificate, CBSE}
+% \hfill {\textit{Jul 2013 --- May 2015}}
+% \end{minipage}
+
+% \item \begin{minipage}{\linewidth} \textbf{Chauhan Institute of Science, Mumbai} \hfill Marks: 85.08\% \\
+% \textit{Higher Secondary Certificate; Science w/Bifocal in Computer Science} \hfill \textit{Mon yyyy --- Mon yyyy}
+% \end{minipage}
+
+% \item \begin{minipage}{\linewidth} \textbf{Utpal Shanghvi School, Mumbai} \hfill Marks: 92.36\% \\
+% \textit{Secondary School Certificate} \hfill \textit{Mon yyyy --- Mon yyyy}
+% \end{minipage}
+
+
+%%%%%% --------------------------------------------------------------------------------------
+%%%%%%  Relevant Coursework
+%%%%%% --------------------------------------------------------------------------------------
+% \vspace{-0.32cm}
+% \section{Relevant Coursework}
+% \vspace{-0.08cm} 
+% Programming and Data Structures, Calculus, Probability and Statistics, Linear Algebra, Operations Research, Optimisation Methods in Finance, Nonlinear Programming, Numerical Solution of Ordinary \& Partial Differential Eqns, Transform Calculus
+
+
+%\vspace{-0.15cm} 
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  ACADEMIC PROJECTS
+%%%%%%% --------------------------------------------------------------------------------------
+
+%\vspace{-0.15cm} 
+%%%%%%% ----------------------------------- Role 3 ----------------------------------- %%%%%%%
+% \subsection*{Role 3, {\normalsize\normalfont Department Name} \hfill Mon yyyy --- Mon yyyy} 
+%     \begin{zitemize}
+%         \item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus suscipit scelerisque urna, id facilisis metus vestibulum at. In nec sapien dignissim, ultricies dolor accumsan, malesuada augue 
+%         \item Aenean nec dui et felis mattis suscipit ut sed tortor. Sed nec viverra nulla. Mauris in dapibus quam.Aenean ut ligula sed orci interdum scelerisque. Cras eget odio mattis, accumsan arcu ac, interdum enim. Quisque et pharetra sem, in euismod leo 
+%     \end{zitemize}
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  WORK EXPERIENCE
+%%%%%%% --------------------------------------------------------------------------------------
+\vspace{-0.29cm}
+\section{Work Experience}
+
+%%% ----- Best way to write items (Credit - ResumePuppy.com)
+        % \item Developed AngularJS microservice to automate parsing of ~300 emails/day for efficient service request categorization using Linux MBox & Perl scripts; reduced manual re-allocation by 87%.
+        % \item Led the development, build and bring-up execution of Lyft’s first functional AV platform from start to finish; established fleet-grade product reliability over 5 months.
+        % \item Enhanced user experience by fine-tuning stored procedures & SQL queries for efficient data retrieval from ~4M records accessed by 5000+ users worldwide.
+        % \item Built a custom menu single handedly using HTML5, CSS3, XML and JSP and improved the performance of existing application by tuning the PL/SQL scripts by 20\% and reduced on-migration time.
+        
+
+%%%%%%% ----------------------------------- Role 4 ----------------------------------- %%%%%%%
+% \vspace{-0.05cm}
+\subsection*{\large American Express, Credit and Fraud Risk (US market) \hfill {\normalsize\normalfont Gurgaon, India \\{\textit{\textbf{Assistant Manager - Data Science} \hfill Aug 2021 --- Jul 2022}}}} 
+%\todo[inline]{Section to Update}
+\vspace{0.05cm}
+    \begin{zitemize}
+        \item \textbf{Graph Linkage Network}: Leveraged the bureau trade-line data \textbf{(\~250M rows)} housed on AWS to create a Directed Cyclic Graph, with consumers as nodes and shared trades as edges. Resulting modelling features from the network improved the defaulter capture rate and helped save \textbf{\$2.5M of yearly} credit default.
+        \item \textbf{Xgboost pipeline for Covid deferrals}: Developed a modelling pipeline on AWS to identify customers enrolled in payment deferral plans. Collaborated with colleagues in Experian, to deploy it on the Experian's infrastructure.
+        \item \textbf{Feature Selection Research}: Implemented and tested Gradient Boosted Feature Selection \& min-Redundancy Max-Relevance methods on a data of \~30M rows (US \& Canada data) using Spark and MapReduce. 
+        \item \textbf{Delinquency Index}: Used balance \& delinquency time series data to improve capture of high balance defaulters by 1.1\%.
+        \item Subprime Data: Used DataX, Teletrack \& Clarity from Equifax/Experian to add \textbf{74bps GINI} lift in low tenure defaulter.
+    \end{zitemize}
+
+% \vspace{-0.55cm}
+\subsection*{{\normalsize\normalfont{\textit{\textbf{Analyst - Data Science} \hfill Aug 2019 --- Jul 2021}}}}
+\vspace{0.05cm}
+    \begin{zitemize}
+        % \item Developed an automated tool to parse metadata like name, contact, etc., from the resume pdf using \textbf{regex \& NER model}.
+        \item \textbf{Customer Segmentation}: Predicted the external credit card with the highest card spend, using transfer learning on new accounts data. The predictions were used to identify potential growth buckets.
+        \item \textbf{Covid Trigger Parsing}: Analyst of Quarter for automated dashboards from trigger data, using cron, helping save 3 days.
+        \item \textbf{Resume Parsing}: Slashed resume screening time by \textbf{30\%} with NLP: \textbf{zero-shot classifier}, \& Named Entity Recognition.
+        \item External Payment prediction: Improved accuracy of the model by 7\%, using Synthetic minority over sampling \textbf{SMOTE}.
+        \item \textbf{Customer Contact Model}: Improved GINI of the GBM model by 16\% along with a reduction in input features by 22\%.
+    \end{zitemize}
+
+% \vspace{-0.55cm}   
+% \subsection*{{\normalsize\normalfont{\textit{\textbf{Analyst Intern - Data Science} \hfill May 2018 --- Jul 2018}}}}
+% \vspace{0.05cm}
+%     \begin{zitemize}
+%         \item \textbf{Customer Contact Model}: Improved GINI of External Contact GBM model by 16\% and reducing variables by 22\%.
+%         \item Hyper-parameter optimization: Developed a automated grid search module of \textbf{GBM} with Python \& Bash, saving 1 day.
+%         % Reduced model development time by \textbf{1 day}, by module  grid search over hyper-parameters
+%         % \item \textbf{Reduced} development time by \textbf{1 day} by automating hyper-parameter optimization for (\textbf{GBM}) with Python \& Bash Shell.
+%     \end{zitemize}
+
+% \vspace{-0.5cm}
+\subsection*{\large Quantiphi Analytics Pvt. Ltd, Athena's Owl \hfill {\normalsize\normalfont Mumbai, India \\{\textit{\textbf{Decision Science Intern} \hfill May 2017 --- Jun 2017}}}} 
+\vspace{0.043cm}
+    \begin{zitemize}
+        \item Object Detection: Adjudged Best Intern-2017, for developing Object detection module of Athena’s Owl using (\textbf{R-CNN}).
+        \item Web Scraping: Implemented a module to scrape meta-tags out of unstructured data, using \textbf{Selenium \& Beautiful Soup}.
+        % \item Implemented an all-encompassing clustering module using Python \& Tableau, reducing the time from \textbf{3 weeks to 4 days.}
+        % \item Developed a module to scrape meta-tags of TV Shows, and infer critical episodes from it, using \textbf{Selenium and Beautiful Soup}. The meta tagging product \href{https://athenasowl.tv/about-us/}{\textbf{Athena's Owl}} received widespread acclaim at \textbf{Google Cloud Summit-2017}.
+    \end{zitemize}
+
+% \subsection*{XXX Scientist {\normalsize\normalfont (Intern)} \hfill Mon yyyy --- Mon yyyy} 
+% \subtext{Add Company Name Here \hfill Location} 
+%     \begin{zitemize}
+%         \item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet justo porta magna ultrices ultricies. Nam sem augue, lobortis sit amet venenatis sed, rutrum vel dui. Fusce mauris libero, ultrices quis convallis venenatis, malesuada at neque. Vivamus facilisis metus enim, convallis egestas dui dictum vel. Integer lacus nisl, molestie vitae bibendum eget, finibus vitae ligula. 
+%         \item Duis fermentum arcu vitae faucibus cursus. Praesent aliquet id risus dictum lobortis. Donec varius tincidunt aliquet.Nulla congue nulla sed accumsan consequat. Pellentesque facilisis cursus faucibus.
+%     \end{zitemize}
+
+
+%%%%%%% ----------------------------------- Role 5 ----------------------------------- %%%%%%%
+% \subsection*{YYY Engineer {\normalsize\normalfont (Intern)} \hfill Mon yyyy --- Mon yyyy} 
+% \subtext{Add Company Name Here \hfill Location} 
+%     \begin{zitemize}
+%         \item Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer sit amet justo porta magna ultrices ultricies. Nam sem augue, lobortis sit amet venenatis sed, rutrum vel dui. Fusce mauris libero, ultrices quis convallis venenatis, malesuada at neque. 
+%         \item Duis fermentum arcu vitae faucibus cursus. Praesent aliquet id risus dictum lobortis. Donec varius tincidunt aliquet.
+%     \end{zitemize}
+%\vspace{-0.15cm} 
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  SKILLS
+%%%%%%% --------------------------------------------------------------------------------------
+\vspace{-0.2cm}
+\section{Technical Skills}
+\vspace{-0.12cm}
+\begin{zitemize}
+    \item \textbf{Programming languages:} C | Python | R | SQL | Scala | MATLAB | SAS | \LaTeX\ | Bash | Excel | Hive
+    \item \textbf{Software/Frameworks:} AWS (EMR/S3) | Pyspark | Keras | TensorFlow | Tableau | Hadoop | MapReduce | Yarn
+    \item \textbf{Machine Learning:} XGBoost | A/B Testing | Optimization | Forecasting | Statistical Modelling | Bayesian Modelling
+% | A/B Testing
+\end{zitemize}
+
+\vspace{-0.2cm}
+% \vspace{-0.050cm}
+\section{Projects \& Publications} %% (Or "Research", select as appropriate)
+
+%%% ----- Best way to write items (Credit - FAANGPath.com)
+        % \item Achieved X\% growth for XYZ using A, B, and C skills.
+        % \item Led XYZ which led to X\% of improvement in ABC
+        % \item Developed XYZ that did A, B, and C using X, Y, and Z. 
+
+
+%%%%%%% ----------------------------------- Role 1 ----------------------------------- %%%%%%%
+% \vspace{-0.07cm}
+% \subsection*{University of Otago, Information Science Department \hfill {\normalsize\normalfont Dunedin, New Zealand \\{\textit{Research Intern \hfill May 2019 --- Jul 2019}}}} 
+% \vspace{0.1cm}
+
+    
+\subsection*{\href{https://github.com/ML-7641-Fall-2022/RoboChef}{Food Recognition and Recommender System} \hfill {\normalsize\normalfont {\textit{Machine Learning Class Project, Georgia Tech}}}} 
+\vspace{0.043cm}
+    \begin{zitemize}
+        \item Used ResNet50 CNN architecture with transfer Learning to achieve a Top-5 validation accuracy of 91\% on food images. 
+        \item Applied Collaborative Filtering with SVD algorithm on the food rating dataset to recommend the best recipes to a user.
+        % \item Transposed \textbf{Gelman Rubin} statistic to analyze the convergence of MCMC chains in grammar space using \textbf{tree kernels}. 
+    \end{zitemize}
+
+\subsection*{\href{https://github.com/ashish1610dhiman/learning_norms_with_mcmc_from_pcfg_IJCAI21}{Norm Learning with MCMC Sampling} \hfill {\normalsize\normalfont {\textit{University of Otago, New Zealand}}}} 
+\vspace{0.043cm}
+    \begin{zitemize}
+        \item Published research in \href{https://www.ijcai.org/proceedings/2021/17}{\textbf{IJCAI'21}} to infer Norms expressed as instances of Probabilistic Grammar using MCMC sampling. 
+        % \item Applied Monte Carlo Markov Chain (\textbf{MCMC}) technique to sample the posterior distribution of Candidate Norms.
+        \item Transposed \textbf{Gelman Rubin} statistic to analyze the convergence of MCMC chains in grammar space using \textbf{tree kernels}. 
+    \end{zitemize}
+
+
+%%%%%%% ----------------------------------- Role 2 ----------------------------------- %%%%%%%
+
+% \vspace{-0.3cm}
+% \subsection*{IIT Kharagpur, Vinod Gupta School of Management \hfill {\normalsize\normalfont Kharagpur, India \\{\textit {Bachelor's Dissertation \hfill Aug 2018 --- May 2019}}}}
+\subsection*{\href{https://github.com/ashish1610dhiman/enhanced_index_tracking}{Portfolio Optimisation with Kernel Search} \hfill {\normalsize\normalfont {\textit{Bachelors Thesis, VGSOM, IIT KGP}}}} 
+\vspace{0.043cm}
+    \begin{zitemize}
+        \item Solved Enhanced Index tracking (Mixed Integer) with Heuristic Kernel Search to improve the performance by 12\%.
+        % \item Formulated the EIT as a Mono-Objective Linear optimization, leveraging a weighted Risk \& Return objective function.
+        \item Used Nonnegative Principal Components and Nonnegative Matrix factorization to remove short-term volatility.
+    \end{zitemize}
+    
+\subsection*{\href{https://drive.google.com/file/d/1tAvEzsKtTg2SOw8D77WdrFSnbWRt9m48/view?usp=sharing}{Ranking Mutual Fund Houses in India} \hfill {\normalsize\normalfont {\textit{Inter Hall Data Science, IIT KGP}}}} 
+%\todo[inline]{Add another point}
+\vspace{0.043cm}
+    \begin{zitemize}
+        \item \textbf{Captained} a gold winning team of \textbf{20 members}, for developing a analytics framework to rank Mutual Fund Houses.
+        \item Applied \textbf{LSTM} for multivariate temporal forecasting of Net Asset Values (NAV) of mutual funds, and Vector Auto Regression (VAR) for quantifying responsiveness of the fund houses against macroeconomic anomalies and shocks.
+    \end{zitemize}    
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  Internships
+%%%%%%% --------------------------------------------------------------------------------------
+% \vspace{-0.10cm}
+% \section{Internships}
+% \vspace{-0.05cm}
+% \subsection*{Risk Management Intern \hfill {\normalsize\normalfont Gurgaon, India \\{\textit{Decision Science, Credit and Fraud Risk, American Express \hfill May 2018 --- Jul 2018}}}} 
+% \vspace{0.043cm}
+%     \begin{zitemize}
+%         \item Awarded Pre-Placement Offer for improving GINI of External Contact model by \textbf{16\%} and reducing variables by \textbf{22\%}.
+%         \item Implemented an automated process in Python \& Shell for hyper-parameter optimization of Decision Trees (\textbf{GBM}) model.
+%     \end{zitemize}
+
+
+% \subsection*{Decision Science Intern \hfill {\normalsize\normalfont Mumbai, India \\{\textit{Athena's Owl, Quantiphi Analytics Pvt. Ltd. \hfill May 2017 --- Jun 2017}}}} 
+% \vspace{0.043cm}
+%     \begin{zitemize}
+%         \item Adjudged \textbf{Eklavya: Best Intern-2017}, for exceptional work on Object detection (\textbf{R-CNN}) work-stream of Athena’s Owl.
+%         \item Developed a module to scrape meta-tags of TV Shows and infer critical episodes, using \textbf{Selenium \& Beautiful Soup}.
+%         % \item Implemented an all-encompassing clustering module using Python \& Tableau, reducing the time from \textbf{3 weeks to 4 days.}
+%         % \item Developed a module to scrape meta-tags of TV Shows, and infer critical episodes from it, using \textbf{Selenium and Beautiful Soup}. The meta tagging product \href{https://athenasowl.tv/about-us/}{\textbf{Athena's Owl}} received widespread acclaim at \textbf{Google Cloud Summit-2017}.
+%     \end{zitemize}
+ %\vspace{-0.15cm}   
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  Competitions
+%%%%%%% --------------------------------------------------------------------------------------
+% \vspace{-0.18cm}
+% \section{Competitions}
+% \subsection*{Ranking Mutual Fund Houses in India | insAnalytics \hfill {\normalsize\normalfont {\textit{Inter Hall Data Analytics, IIT Kharagpur- 2018}}}} 
+% %\todo[inline]{Add another point}
+% \vspace{0.043cm}
+%     \begin{zitemize}
+%         \item \textbf{Captained} a \textbf{gold} winning team of \textbf{20 members}, for developing a comprehensive framework to rank Mutual Fund Houses.
+%         \item Applied \textbf{LSTM} for multivariate temporal forecasting of Net Asset Values (NAV) of mutual funds, and Vector Auto Regression (\textbf{VAR}) for quantifying responsiveness of the fund houses against macroeconomic anomalies and shocks.
+%     \end{zitemize}
+
+% \subsection*{Ranking ATM providers in California | Zivanta Analytics \hfill {\normalsize\normalfont {\textit{Inter Hall Data Analytics, IIT Kharagpur- 2017}}}} 
+% %\todo[inline]{Add another point}
+% \vspace{0.043cm}
+%     \begin{zitemize}
+%         \item Developed \textbf{Gold-Winning model }to evaluate Competitive Strength of ATM providers, with ATM locale \& demographics.
+%         \item Designed Market Share metric as the measure of Competitive Advantage for each zip-code, calculated using population demographics of zip-code, and proximity of ATMs to economic hubs, information scraped with \textbf{Google Maps API}.
+%     \end{zitemize}
+    
+%\vspace{-0.15cm} 
+% %%%%%%% --------------------------------------------------------------------------------------
+% %%%%%%%  AWARDS & HONORS
+% %%%%%%% --------------------------------------------------------------------------------------
+% \section{Awards \& Achievements}
+% \begin{tabular}[t]{ p{4em} p{50em}}
+% \hskills{yyyy} & Award 1 (\hskills{\$xxxxxx}); Award 2 (\hskills{\$xxxxxx}); Award 3 (\hskills{\$xxxxxx}); Award 4 (\hskills{\$xxxxxx}); Award 5 (\hskills{\$xxxxxx}) \\ % 
+% \hskills{yyyy} & Award 6 (\hskills{\$xxxxxx}); Award 7 (\hskills{\$xxxxxx}); Award 8 (\hskills{\$xxxxxx}) \\
+% \end{tabular} 
+
+
+% \begin{tabular}{p{7em} p{48em}}
+% \hskills{Physics} &  A, B, C, D, E, F \\
+% \hskills{Management} & G, H, I, J, K, L, M  \\
+% \hskills{Programming} & N, O, P, Q, R, S, T \\
+% \end{tabular}
+% \vspace{-0.2cm}
+%\vspace{-0.15cm} 
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  VOLUNTEER EXPERIENCE
+%%%%%%% --------------------------------------------------------------------------------------
+% \section{Volunteer (or LEADERSHIP) Experience}
+
+%%%%%%% ----------------------------------- Role 6 ----------------------------------- %%%%%%%
+% \subsection*{Position, Org \hfill Mon yyyy --- Mon yyyy} 
+%     \begin{zitemize}
+            % \item \textbf{Short Project Title.} {Build a project that does something and had quantified success using A, B, and C.}
+%     \end{zitemize}
+
+
+%%%%%%% ----------------------------------- Role 6 ----------------------------------- %%%%%%%
+% \subsection*{Position, Org \hfill Mon yyyy --- Mon yyyy} 
+%     \begin{zitemize}
+            % \item \textbf{Short Project Title.} {Build a project that does something and had quantified success using A, B, and C.}
+%     \end{zitemize}
+
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  PUBLICATIONS
+%%%%%%% --------------------------------------------------------------------------------------
+% \vspace{-0.1cm}
+% \section{Publications} 
+% % \renewcommand\refname{\vskip -1.5em}
+% \nocite{*}
+% \vspace{-0.12cm}
+% \printbibliography[heading=none]
+% %\vspace{-0.4cm}
+% %\vspace{-0.15cm} 
+
+
+%%%%%%% --------------------------------------------------------------------------------------
+%%%%%%%  AWARDS & HONORS
+%%%%%%% --------------------------------------------------------------------------------------
+
+% \vspace{-0.050cm}
+% \section{Awards \& Achievements}
+% \vspace{-0.12cm}
+% %\todo[inline]{should I separate Work/KGP/JEE}
+%     \begin{zitemize}
+%         \item Achieved an \textbf{All India Rank within Top 0.5}\% in the JEE 2015, among the 1.3 million registered applicants.
+%         \item Received letter of appreciation (2015) from Gov. of India, for ranking amongst the Top 1\% in All India High School.
+%         % \item Awarded \textbf{Gymkhana Award} for contribution to Inter Hall events.
+%         % \item Finished with \textbf{Class Rank of 2}, amongst the BTech students of Aerospace Department graduating in 2019.
+%         % \item Awarded \textbf{Gymkhana Award} for contribution to events of Case Study, Data Analytics and Ad-Design at IIT-Kharagpur.
+%         % \item Awarded \textbf{Analyst of Quarter (Q3’2020)} and \textbf{Senior Vice President Award (Q1’2021)} by American Express.
+%     \end{zitemize}
+%\vspace{-0.15cm} 
+
+% \vspace{-0.10cm}
+% \section{Extra Curricular}
+% \vspace{-0.16cm}
+% %\todo[inline]{should I include Inter Hall here or there ?}
+% \begin{zitemize}
+%         \item \textbf{Guided 5 juniors} on the emotional \& academic fronts in their first year at IIT-KGP as a Student Welfare Group volunteer.
+%         \item \textbf{Inter Hall} events (IIT Kharagpur): \textbf{Gold} in Ad-Design 2017 | \textbf{Gold and Bronze} in Case Study 2018 \& 2017, respectively.
+%     \end{zitemize}
+%\vspace{-0.15cm} 
+% \begin{tabular}[t]{ p{4em} p{50em}}
+% \hskills{yyyy} & Award 1 (\hskills{\$xxxxxx}); Award 2 (\hskills{\$xxxxxx}); Award 3 (\hskills{\$xxxxxx}); Award 4 (\hskills{\$xxxxxx}); Award 5 (\hskills{\$xxxxxx}) \\ % 
+% \hskills{yyyy} & Award 6 (\hskills{\$xxxxxx}); Award 7 (\hskills{\$xxxxxx}); Award 8 (\hskills{\$xxxxxx}) \\
+% \end{tabular} 
+
+%%%%%%% ---------------------------- END DOC HERE ---------------------------- %%%%%%% 
+
+% \vspace{0.5cm}
+% \textsuperscript{\#}\textit{Expected Future Courses}
+\end{document}
